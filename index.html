@@ -6,22 +6,82 @@
   <script id="challenge">
     // 👉 CHALLENGE 1
     function profileActivation(profile, reason) {
-
+  //  if (profile.active === undefined) {
+  //   return  "impossible to ascertain status"
+  //  } 
+   if (profile.active === true && reason === undefined) {
+     return "confirm status manually"
+   } 
+    if (profile.active === true) {
+      profile.active = false 
+      profile.reason = reason
+      return profile
+    }
+     if (profile.active === false) {
+      profile.active = true 
+      delete profile.reason
+     return profile }
+    
+  
     }
 
     // 👉 CHALLENGE 2
     function mineSweeper(grid, x, y) {
-
+    if (x < 1 || x > 3 || y < 1 || y > 3) {
+        return "invalid coordinates";
     }
+    const rowIndex = y - 1;
+    const colIndex = x - 1;
+    const square = grid[rowIndex][colIndex];
+    if (square === "🟥") {
+        return "🟥 💀"; 
+    } else if (square === "🟦") {
+        return "🟦 🥳";
+    } else {
+        return "unknown square";
+    }
+}
+    
 
     // 👉 CHALLENGE 3
     function booleanize(obj) {
-
+    for (let prop in obj) {
+      if (prop.length > 9) {
+        return "shorten all prop names to 9 chars or less"
+      }
+      if (obj[prop] === 0) {
+        obj[prop] = false 
+      } else if (obj[prop] === 1) {
+        obj[prop] = true
+      }
+      if (obj[prop] === null) {
+        delete obj[prop]
+      }
+    }
+    return obj
     }
 
     // 👉 CHALLENGE 4
     function scrub(text, forbidden) {
-
+    const words = text.split(" ")
+    const scrubbedWords = []
+    for (let i in words) {
+      const word = words[i]
+      let scrubbedWord = word 
+      for (let i in forbidden) {
+        const forbiddenWord = forbidden[i]
+        if (word === forbiddenWord) {
+          let substitute = ""
+          for (let i in word) {
+            substitute += "x"
+          }
+          scrubbedWord = substitute
+          break
+        }
+      }
+      scrubbedWords.push(scrubbedWord)
+    }
+    return scrubbedWords.join(" ")
     }
 
     // 👉 CHALLENGE 5 (bonus, NOT graded)

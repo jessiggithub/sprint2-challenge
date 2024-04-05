@@ -1,22 +1,6 @@
 # Challenge 2: MineSweeper Game
 
-### Objective
-Develop the `mineSweeper` function that evaluates a player's move in a grid-based minefield game. The function should analyze the grid position based on provided coordinates and determine if the player has landed on a safe spot or a mine.
 
-### Function
-```javascript
-function mineSweeper(grid, x, y)
-```
-
-#### Parameters
-- **grid:** An array of arrays representing the game grid.
-- **x:** The x-coordinate (horizontal position) in the grid.
-- **y:** The y-coordinate (vertical position) in the grid.
-
-### Grid Structure
-The grid consists of a 3x3 array of strings, where:
-- "🟥" represents a mine.
-- "🟦" represents a safe spot.
 
 Example:
 ```javascript
@@ -35,7 +19,23 @@ The grid is interpreted with `x` and `y` coordinates ranging from 1 to 3.
 ## Requirements
 1. If the coordinates land on a red square ("🟥"), return `"🟥 💀"`.
 2. If the coordinates land on a blue square ("🟦"), return `"🟦 🥳"`.
-3. If `x` _or_ `y` is less than 1 or greater than 3, return `"invalid coordinates"`.
+3. If `x` _or_ `y` is less than 1 or greater than 3, return `"invalid coordinates"`.### Objective
+Develop the `mineSweeper` function that evaluates a player's move in a grid-based minefield game. The function should analyze the grid position based on provided coordinates and determine if the player has landed on a safe spot or a mine.
+
+### Function
+```javascript
+function mineSweeper(grid, x, y)
+```
+
+#### Parameters
+- **grid:** An array of arrays representing the game grid.
+- **x:** The x-coordinate (horizontal position) in the grid.
+- **y:** The y-coordinate (vertical position) in the grid.
+
+### Grid Structure
+The grid consists of a 3x3 array of strings, where:
+- "🟥" represents a mine.
+- "🟦" represents a safe spot.
 
 ### Examples
 

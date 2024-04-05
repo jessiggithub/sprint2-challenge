@@ -9,6 +9,7 @@ Implement the profileActivation function to manage the activation status of user
 ```
 function profileActivation(profile, reason)
 ```
+
 #### Parameters
 - profile: An object representing a user profile.
 - reason (optional): A string describing the reason for inactivity.
